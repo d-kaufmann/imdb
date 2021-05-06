@@ -2,7 +2,7 @@
  
 Make sure to add `appsettings.json` in the folder `View`. This file is not on GitHub because of security reasons.
 
-It should look like this:
+It should look something like this:
 ```json
 {
  "Logging": {
