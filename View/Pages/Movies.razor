@@ -1,0 +1,51 @@
+@page "/movies"
+@using Model.Entity
+@using Domain.Repository
+
+@inject IMovieRepository _movieRepository
+
+<div class="container">
+    <div class="row mt-2">
+        <div class="col-2">
+            <NavLink href="createMovie" class="btn btn-info">Create Movie</NavLink>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-4">
+            <h4 class="card-title text-info">Movielist</h4>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-sm table-bordered">
+            <thead class="bg-info text-white">
+            <tr>
+                <th>Name</th>
+                <th>Duration</th>
+                <th>Description</th>
+                <th>Release Date</th>
+            </tr>
+            </thead>
+            <tbody class="text-muted small">
+            @foreach (var movie in MovieList)
+            {
+                <tr>
+                    <td>@movie.Name</td>
+                    <td>@movie.Duration</td>
+                    <td>@movie.ShortDescription</td>
+                    <td>@movie.ReleaseDate.ToString("MM/dd/yyyy")</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@code {
+    public IEnumerable<Movie> MovieList { get; set; }
+
+    protected override void OnInitialized()
+    {
+        MovieList = _movieRepository.Get(m=>true);
+    }
+}
