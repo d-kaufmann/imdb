@@ -6,9 +6,7 @@
 
 <div class="container">
     <div class="row mt-2">
-        <div class="col-2">
-            <NavLink href="createMovie" class="btn btn-info">Create Movie</NavLink>
-        </div>
+        <NavLink href="createmovie" class="btn btn-info">Create Movie</NavLink>
     </div>
     <div class="row mt-5">
         <div class="col-4">
@@ -20,9 +18,10 @@
             <thead class="bg-info text-white">
             <tr>
                 <th>Name</th>
-                <th>Duration</th>
-                <th>Description</th>
+                <th>Duration (in minutes)</th>
+                <th>Description (short)</th>
                 <th>Release Date</th>
+                <th>Remove</th>
             </tr>
             </thead>
             <tbody class="text-muted small">
@@ -33,6 +32,7 @@
                     <td>@movie.Duration</td>
                     <td>@movie.ShortDescription</td>
                     <td>@movie.ReleaseDate.ToString("MM/dd/yyyy")</td>
+                    <td><button class="btn btn-danger btn-sm" @onclick="@(() => Remove(movie))">Remove</button></td>
                 </tr>
             }
             </tbody>
@@ -47,5 +47,10 @@
     protected override void OnInitialized()
     {
         MovieList = _movieRepository.Get(m=>true);
+    }
+    
+    void Remove(Movie movie) {
+       
+        _movieRepository.Delete(movie);
     }
 }
