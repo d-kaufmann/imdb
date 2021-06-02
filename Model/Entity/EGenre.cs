@@ -1,5 +1,5 @@
 namespace Model.Entity {
     public enum EGenre {
-        HistoricalDrama, ActionFlick, Comedy
+        Action, Comedy, Drama, Fantasy, Horror, Mystery, Romance, Thriller, Western
     }
 }

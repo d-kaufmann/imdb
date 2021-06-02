@@ -18,18 +18,18 @@
             <thead class="bg-info text-white">
             <tr>
                 <th>Name</th>
-                <th>Duration (in minutes)</th>
-                <th>Description (short)</th>
+                <th>Duration</th>
+                <th>Description</th>
                 <th>Release Date</th>
                 <th>Remove</th>
             </tr>
             </thead>
-            <tbody class="text-muted small">
+            <tbody class="text-muted">
             @foreach (var movie in MovieList)
             {
                 <tr>
                     <td>@movie.Name</td>
-                    <td>@movie.Duration</td>
+                    <td>@movie.Duration minutes</td>
                     <td>@movie.ShortDescription</td>
                     <td>@movie.ReleaseDate.ToString("MM/dd/yyyy")</td>
                     <td><button class="btn btn-danger btn-sm" @onclick="@(() => Remove(movie))">Remove</button></td>
@@ -42,15 +42,16 @@
 
 
 @code {
-    public IEnumerable<Movie> MovieList { get; set; }
+    public List<Movie> MovieList { get; set; }
 
     protected override void OnInitialized()
     {
-        MovieList = _movieRepository.Get(m=>true);
+        MovieList = (_movieRepository.Get(m=>true)).ToList();
     }
     
     void Remove(Movie movie) {
        
         _movieRepository.Delete(movie);
+        MovieList.Remove(movie);
     }
 }

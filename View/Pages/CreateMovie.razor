@@ -15,12 +15,12 @@
         <DataAnnotationsValidator/>
         <div class="form-row">
             <div class="form-group col-md-5">
-                <label for="movieTitle" class="small text-info">title:</label>
-                <InputText class="form-control form-control-sm" id="movieTitle" placeholder="title" @bind-Value="@Movie.Name"/>
+                <label for="movieTitle" class="small text-info">Title</label>
+                <InputText class="form-control form-control-sm" id="movieTitle" placeholder="Matrix" @bind-Value="@Movie.Name"/>
                 <ValidationMessage style="font-size: small; margin-top: 4pt" For="() => Movie.Name"/>
             </div>
             <div class="form-group col-md-3">
-                <label for="movieGenre" class="small text-info">genre:</label>
+                <label for="movieGenre" class="small text-info">Genre</label>
                 <InputSelect class="form-control form-control-sm" id="movieGenre" @bind-Value="@Movie.Genre">
                     <option value="">Select genre ...</option>
                     @foreach (var genre in Enum.GetValues<EGenre>()) {
@@ -31,35 +31,35 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-8">
-                <label for="movieShortDescription" class="small text-info">short description:</label>
-                <InputTextArea class="form-control form-control-sm" id="movieShortDescription" rows="3" placeholder="short description" @bind-Value="Movie.ShortDescription"/>
+                <label for="movieShortDescription" class="small text-info">Short description</label>
+                <InputTextArea class="form-control form-control-sm" id="movieShortDescription" rows="3" placeholder="When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence." @bind-Value="Movie.ShortDescription"/>
                 <ValidationMessage style="font-size: small; margin-top: 4pt" For="() => Movie.ShortDescription"/>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
-                <label for="movieReleaseDate" class="small text-info">release date:</label>
+                <label for="movieReleaseDate" class="small text-info">Release date</label>
                 <InputDate class="form-control form-control-sm" id="movieReleaseDate" @bind-Value="@Movie.ReleaseDate"/>
                 <ValidationMessage style="font-size: small; margin-top: 4pt" For="() => Movie.ReleaseDate"/>
             </div>
 
             <div class="form-group col-md-2">
-                <label for="movieLength" class="small text-info">length (in minutes):</label>
+                <label for="movieLength" class="small text-info">Length (in minutes)</label>
                 <InputNumber class="form-control form-control-sm" id="movieLength" @bind-Value="@Movie.Duration"/>
                 <ValidationMessage style="font-size: small; margin-top: 4pt" For="() => Movie.Duration"/>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
-                <label for="movieDirector" class="small text-info">director:</label>
-                <InputText class="form-control form-control-sm" id="movieDirector" placeholder="director" @bind-Value="@Movie.Director"/>
+                <label for="movieDirector" class="small text-info">Director</label>
+                <InputText class="form-control form-control-sm" id="movieDirector" placeholder="Lilly Wachowski, Lana Wachowski" @bind-Value="@Movie.Director"/>
                 <ValidationMessage style="font-size: small; margin-top: 4pt" For="() => Movie.Director"/>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-8">
-                <label for="movieDescription" class="small text-info">description:</label>
-                <InputTextArea class="form-control form-control-sm" id="movieDescription" rows="7" placeholder="description" @bind-Value="Movie.Description"/>
+                <label for="movieDescription" class="small text-info">Description</label>
+                <InputTextArea class="form-control form-control-sm" id="movieDescription" rows="7" placeholder="The Matrix is a 1999 science fiction action film written and directed by the Wachowskis, starring Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Joe Pantoliano, and Hugo Weaving. It was first released in the USA on March 31, 1999, and is the first entry in The Matrix series of films, comics, video games and animation. The film received four Academy Awards in the technical categories. The film describes a future in which reality perceived by humans is actually the Matrix, a simulated reality created by sentient Machines in order to pacify and subdue the human population while their bodies' heat and electrical activity are used as an energy source. Upon learning this, computer programmer 'Neo' is drawn into a rebellion against the Machines. The film contains numerous references to the cyberpunk and hacker subcultures; philosophical and religious ideas; and homages to Alice's Adventures in Wonderland, Hong Kong action movies, Spaghetti Westerns and Japanese animation." @bind-Value="Movie.Description"/>
                 <ValidationMessage style="font-size: small; margin-top: 4pt" For="() => Movie.Description"/>
             </div>
         </div>
