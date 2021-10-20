@@ -18,3 +18,7 @@ namespace View {
                 .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
     }
 }
+
+// cd .../imdb/Model
+// dotnet ef --startup-project ../View migrations add mig1
+// dotnet ef --startup-project ../View database update
