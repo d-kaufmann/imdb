@@ -22,7 +22,7 @@ namespace View {
             services.AddDbContext<MovieDbContext>(
                 options => options.UseMySql(
                     Configuration.GetConnectionString("DefaultConnection"), 
-                    ServerVersion.FromString("8.0.23"), 
+                    ServerVersion.Parse("8.0.23"), 
                     null
                     )
                 );
