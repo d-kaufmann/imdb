@@ -1,5 +1,5 @@
 .idea
-View/appsettings.json
+appsettings.json
 bin/
 obj/
 /packages/
