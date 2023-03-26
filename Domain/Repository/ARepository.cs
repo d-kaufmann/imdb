@@ -33,6 +33,14 @@ namespace Domain.Repository {
             return this._dbSet.Find(id);
         }
 
+        public List<TEntity> GetWithStart(int start, int count)
+        {
+            return this._dbSet
+                .Skip(start)
+                .Take(count)
+                .ToList();
+        }
+        
         public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null) {
             IQueryable<TEntity> query = this._dbSet;
 
