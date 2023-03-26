@@ -14,7 +14,7 @@ It should look something like this:
  },
  "AllowedHosts": "*",
  "ConnectionStrings": {
-   "DefaultConnection": "server=<server address>; port=<exposed port>; database=<database>; user=<user>; password=<password>; Persist Security Info=False; Connect Timeout=300"
+   "DefaultConnection": "server=<server_address>; port=<exposed_port>; database=<database>; user=<user>; password=<password>; Persist Security Info=False; Connect Timeout=300"
  }
 }
 ```
