@@ -1,7 +1,9 @@
-.idea
-appsettings.json
 bin/
 obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+
+.idea
+**/appsettings.json
+**/*.DotSettings.user
