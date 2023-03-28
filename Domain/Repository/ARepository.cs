@@ -7,9 +7,7 @@ using Model.Configuration;
 
 namespace Domain.Repository {
     public abstract class ARepository<TEntity> where TEntity : class {
-
         private readonly MovieDbContext _dbContext;
-
         private readonly DbSet<TEntity> _dbSet;
 
         protected ARepository(MovieDbContext dbContext) {
@@ -33,8 +31,7 @@ namespace Domain.Repository {
             return this._dbSet.Find(id);
         }
 
-        public List<TEntity> GetWithStart(int start, int count)
-        {
+        public List<TEntity> GetWithStart(int start, int count) {
             return this._dbSet
                 .Skip(start)
                 .Take(count)
