@@ -40,7 +40,11 @@ namespace Domain.Repository {
                 .Take(count)
                 .ToList();
         }
-        
+
+        public List<TEntity> ReadAll() {
+            return this._dbSet.ToList();
+        }
+
         public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null) {
             IQueryable<TEntity> query = this._dbSet;
 

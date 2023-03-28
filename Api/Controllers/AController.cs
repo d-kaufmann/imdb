@@ -18,13 +18,16 @@ namespace Api.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public ActionResult<TEntity> ReadAsync(int id) => Ok(_repository.GetById(id));
+        public ActionResult<TEntity> Read(int id) => Ok(_repository.GetById(id));
 
         [HttpGet]
-        public ActionResult<List<TEntity>> ReadAsync(int start, int count) => Ok(_repository.GetWithStart(start, count));
+        public ActionResult<List<TEntity>> Read(int start, int count) => Ok(_repository.GetWithStart(start, count));
+        
+        [HttpGet("control")]
+        public ActionResult<List<TEntity>> ReadAll() => Ok(_repository.ReadAll());
 
         [HttpPost]
-        public ActionResult<TEntity> CreateAsync(TEntity t) {
+        public ActionResult<TEntity> Create(TEntity t) {
             var item = _repository.Insert(t);
             _logger.LogInformation($"created resource");
 
@@ -32,7 +35,7 @@ namespace Api.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public ActionResult UpdateAsync(int id, TEntity t) {
+        public ActionResult Update(int id, TEntity t) {
             var item = _repository.GetById(id);
 
             if (item is null) return NotFound();
@@ -43,7 +46,7 @@ namespace Api.Controllers
         }
 
         [HttpDelete("{id:int}")]
-        public ActionResult DeleteAsync(int id) {
+        public ActionResult Delete(int id) {
             var item = _repository.GetById(id);
 
             if (item is null) return NotFound();

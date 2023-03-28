@@ -13,6 +13,7 @@ namespace Domain.Repository {
 
         IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null);
         List<TEntity> GetWithStart(int start, int count);
+        List<TEntity> ReadAll();
 
         void Delete(TEntity entity);
 
