@@ -1,8 +1,7 @@
 # Imdb
  
-Make sure to add `appsettings.json` in the folder `View`. This file is not on GitHub because of security reasons.
+Make sure to rename `appsettings.json.example` in the folder `View` to `appsettings.json` and update the credentials accordingly. For security purposes, this file is not included in the Git repository.
 
-It should look something like this:
 ```json
 {
  "Logging": {
